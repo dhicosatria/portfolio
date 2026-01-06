@@ -2,19 +2,54 @@ site_name: Rubberdust Notes
 site_url: https://dhicosatria.github.io/portfolio
 theme:
   name: material
+  custom_dir: overrides
+
+  language: en
+
   features:
+    # Navigation
     - navigation.tabs
-    - navigation.expand
+    - navigation.prune
     - navigation.path
     - navigation.sections
     - navigation.top
     - toc.integrate
     - content.code.copy
     - content.tabs.link
+
+    # Search
+    - search.suggest
+    - search.highlight
+
+    # Content
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+
   palette:
-    accent: indigo
+    # Auto dark/light
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 markdown_extensions:
+  #core
   - admonition
   - toc:
       permalink: true
@@ -24,15 +59,44 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
 
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Mermaid diagrams
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+
+extra_javascript:
+  # MathJax (optional but ready)
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - styles/extra.css
+
+
 nav:
   - Home: index.md
   - CTF:
       - Overview: ctf/index.md
-      - advent-of-cyber_cyberstudent_2025:
-        - Overview: docs/ctf/advent-of-cyber_cyberstudent_2025.md
-        - Day 3 – Syndicate Infrastructure: ctf/advent-of-cyber_cyberstudent_2025/day_3_Syndicate-Infrastructure.md
-      - Forensics: ctf/forensics.md
-      - Crypto: ctf/crypto.md
+
+      - Events:
+          - Advent of Cyber 2025 (Cyberstudent):
+              - Overview: ctf/advent-of-cyber_cyberstudent_2025/index.md
+              - Day 3 – Syndicate Infrastructure: ctf/advent-of-cyber_cyberstudent_2025/day_3_Syndicate-Infrastructure.md
+              - Day 4 – The Elf's Wager: ctf/advent-of-cyber_cyberstudent_2025/day_4_The Elf's Wager.md
+
+      - Categories:
+          - Forensics: ctf/forensics.md
+          - Crypto: ctf/crypto.md
+
   - Labs Simulation:
       - Overview: labs_simulate/index.md
   - Projects:

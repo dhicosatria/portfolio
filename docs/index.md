@@ -2,14 +2,14 @@
 
 Welcome! 
 
-Heres my docs:
-- Writeup CTF
-- Simulasi lab & arsitektur
-- DevOps & Cloud notes
-- Security engineering configs
+Here's my docs:
 
+* Writeup CTF
+* Lab & architecture simulation
+* Infra, system, cloud notes
+* Security engineering configs
 
-## Commands
+<!-- ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
@@ -21,4 +21,4 @@ Heres my docs:
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+        ...       # Other markdown pages, images and other files. -->

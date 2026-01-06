@@ -8,3 +8,5 @@ Each challenge is documented with a structured approach, including analysis, com
 ## Challenge List
 
 - [Day 3 — Syndicate Infrastructure](day_3_Syndicate-Infrastructure.md)
+- [Day 4 — The Elf's Wager](day_4_The Elf's Wager.md)
+
